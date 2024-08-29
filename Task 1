@@ -1,0 +1,25 @@
+
+def grade_calculator():
+    print("Grade Calculator")
+    print("1. A (90-100)")
+    print("2. B (80-89)")
+    print("3. C (70-79)")
+    print("4. D (60-69)")
+    print("5. F (below 60)")
+
+    score = float(input("Enter your score (0-100): "))
+
+    if score >= 90:
+        grade = "A"
+    elif score >= 80:
+        grade = "B"
+    elif score >= 70:
+        grade = "C"
+    elif score >= 60:
+        grade = "D"
+    else:
+        grade = "F"
+
+    print("Your grade is:", grade)
+
+grade_calculator()

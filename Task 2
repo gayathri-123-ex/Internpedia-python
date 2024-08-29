@@ -1,0 +1,45 @@
+Here's class ToDoList:
+    def def__init__(self):
+        self.tasks = []
+
+    def show_tasks(self):
+        print("To-Do List:")
+        for i, task in enumerate(self.tasks, start=1):
+            print(f"{i}. {task}")
+
+    def add_task(self):
+        task = input("Enter a task: ")
+        self.tasks.append(task)
+        print("Task added!")
+
+    def delete_task(self):
+        self.show_tasks()
+        task_number = int(input("Enter the task number to delete: "))
+        try:
+            del self.tasks[task_number - 1]
+            print("Task deleted!")
+        except IndexError:
+            print("Invalid task number!")
+
+    def main_loop(self):
+        while True:
+            print("\n1. Show tasks")
+            print("2. Add task")
+            print("3. Delete task")
+            print("4. Quit")
+            choice = input("Choose an option: ")
+            if choice == "1":
+                self.show_tasks()
+            elif choice == "2":
+                self.add_task()
+            elif choice == "3":
+                self.delete_task()
+            elif choice == "4":
+                break
+            else:
+                print("Invalid choice! Try again.")
+
+if __name__ == "__main__":
+    todo_list = ToDoList()
+    todo_list.main_loop()
+
